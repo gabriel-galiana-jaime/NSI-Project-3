@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c2b3rncb8qeg4"
+path="res://.godot/imported/10.Zelda Link's Awakening OST - Overworld [9FYkL2D3d7M].mp3-acdd3e46266ad94e840e18d553d0611b.mp3str"
+
+[deps]
+
+source_file="res://assets/artwork/music/10.Zelda Link's Awakening OST - Overworld [9FYkL2D3d7M].mp3"
+dest_files=["res://.godot/imported/10.Zelda Link's Awakening OST - Overworld [9FYkL2D3d7M].mp3-acdd3e46266ad94e840e18d553d0611b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
