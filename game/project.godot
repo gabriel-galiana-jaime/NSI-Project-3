@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 auto_fullscreen="*res://addons/fullscreen on input/fullscreen_on_input.gd"
+SceneManager="*res://addons/awesome_scene_manager/autoloads/SceneManager.tscn"
 
 [display]
 
@@ -24,6 +25,10 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=2
 window/stretch/mode="viewport"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/awesome_scene_manager/plugin.cfg")
 
 [input]
 
