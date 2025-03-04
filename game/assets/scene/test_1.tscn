@@ -6,8 +6,8 @@
 [node name="test1" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(304, 179)
-rotation = 1.55921
+position = Vector2(958, 286)
+rotation = 2.96112
 scale = Vector2(17.065, 17.065)
 texture = ExtResource("1_3fakw")
 
