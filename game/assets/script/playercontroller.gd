@@ -15,7 +15,7 @@ func _process(delta: float) -> void:
 	input_axis_()
 	state_machine()
 	animation_player()
-	velocity = input_axis * 6000 * delta
+	velocity = input_axis * 3500 * delta
 	move_and_slide()
 	pass
 
@@ -44,8 +44,8 @@ func animation_player():
 		else:
 			anim_pl.play("idle_right")
 	if state_player["look"] == "left":
+		anim_pl.flip_h = true
 		if abs(input_axis.x) >= 1:
-			anim_pl.flip_h = true
 			anim_pl.play("run_right")
 		else:
 			anim_pl.play("idle_right")
