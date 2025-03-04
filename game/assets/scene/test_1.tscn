@@ -1,15 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://o2bkdesxbu2p"]
 
-[ext_resource type="Texture2D" uid="uid://dad8i0744gv4k" path="res://icon.png" id="1_gxyco"]
-[ext_resource type="Script" path="res://assets/script/test1.gd" id="2_gsu8g"]
+[ext_resource type="Script" uid="uid://b4jxeahdmcmhh" path="res://assets/script/test1.gd" id="2_gsu8g"]
 [ext_resource type="Texture2D" uid="uid://s6hnqdfj7oro" path="res://assets/artwork/tileset/tileset2.png" id="3_ybpum"]
+
+[sub_resource type="Resource" id="Resource_pkt63"]
+metadata/__load_path__ = "res://icon.png"
 
 [node name="test1" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(106.335, 0)
 scale = Vector2(1.46, 1.46)
-texture = ExtResource("1_gxyco")
+texture = SubResource("Resource_pkt63")
 script = ExtResource("2_gsu8g")
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]

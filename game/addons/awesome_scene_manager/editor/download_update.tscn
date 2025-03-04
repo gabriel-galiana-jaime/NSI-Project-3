@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bsl6du60suv5q"]
 
-[ext_resource type="Script" path="res://addons/awesome_scene_manager/editor/download_update.gd" id="1_iatpf"]
+[ext_resource type="Script" uid="uid://b7v76qj7r7ml4" path="res://addons/awesome_scene_manager/editor/download_update.gd" id="1_iatpf"]
 [ext_resource type="Texture2D" uid="uid://671dgkmms71u" path="res://addons/awesome_scene_manager/plugin_icon_800x800.png" id="2_er6hc"]
 
 [node name="DownloadUpdate" type="Control" node_paths=PackedStringArray("http_request", "label", "download_button", "release_notes_button")]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://qqwbbbaurvfj"]
 
-[ext_resource type="Script" path="res://addons/awesome_scene_manager/autoloads/SceneManager.gd" id="1_xq8nf"]
+[ext_resource type="Script" uid="uid://o2nkdi3pvcuo" path="res://addons/awesome_scene_manager/autoloads/SceneManager.gd" id="1_xq8nf"]
 
 [sub_resource type="Animation" id="Animation_s6vra"]
 length = 0.001
@@ -61,9 +61,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ba8gl"]
 _data = {
-"RESET": SubResource("Animation_s6vra"),
-"fade_in": SubResource("Animation_7o1pr"),
-"fade_out": SubResource("Animation_gfxy4")
+&"RESET": SubResource("Animation_s6vra"),
+&"fade_in": SubResource("Animation_7o1pr"),
+&"fade_out": SubResource("Animation_gfxy4")
 }
 
 [node name="SceneManager" type="CanvasLayer" node_paths=PackedStringArray("anim")]
