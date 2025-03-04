@@ -169,8 +169,11 @@ sources/0 = SubResource("TileSetAtlasSource_hqkqv")
 [node name="test2" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(12, -7)
+z_index = 10
+position = Vector2(16, 0)
 zoom = Vector2(10, 10)
+editor_draw_limits = true
+editor_draw_drag_margin = true
 
 [node name="player" type="CharacterBody2D" parent="."]
 z_index = 4
