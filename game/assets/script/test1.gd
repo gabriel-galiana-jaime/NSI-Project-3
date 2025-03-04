@@ -13,8 +13,8 @@ hsgdfjhgbdjhgdj
 """
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	position.x += 1000 * delta
+	#position.x += 1000 * delta
 	if 50 >= 0:
-		print("true")
+		#print("true")
 		pass
 	pass

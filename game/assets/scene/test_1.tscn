@@ -1,23 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://o2bkdesxbu2p"]
+[gd_scene load_steps=3 format=3 uid="uid://o2bkdesxbu2p"]
 
-[ext_resource type="Script" uid="uid://b4jxeahdmcmhh" path="res://assets/script/test1.gd" id="2_gsu8g"]
+[ext_resource type="Texture2D" uid="uid://e5kw2deofngv" path="res://assets/artwork/npc/enemys/octoroksheet1.png" id="1_3fakw"]
 [ext_resource type="Texture2D" uid="uid://s6hnqdfj7oro" path="res://assets/artwork/tileset/tileset2.png" id="3_ybpum"]
-
-[sub_resource type="Resource" id="Resource_pkt63"]
-metadata/__load_path__ = "res://icon.png"
 
 [node name="test1" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(106.335, 0)
-scale = Vector2(1.46, 1.46)
-texture = SubResource("Resource_pkt63")
-script = ExtResource("2_gsu8g")
-
-[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
-position = Vector2(717.189, -23.6741)
-scale = Vector2(3.34, 3.34)
-texture = ExtResource("3_ybpum")
+position = Vector2(304, 179)
+rotation = 1.55921
+scale = Vector2(17.065, 17.065)
+texture = ExtResource("1_3fakw")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(928, 508)
+position = Vector2(804, 184)
+zoom = Vector2(0.605, 0.605)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(1107.1, 339.436)
+scale = Vector2(4.8764, 4.8764)
+texture = ExtResource("3_ybpum")
