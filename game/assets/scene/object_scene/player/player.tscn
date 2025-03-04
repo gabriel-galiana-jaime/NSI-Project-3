@@ -17,4 +17,4 @@ shape = SubResource("RectangleShape2D_8by0f")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_61gdb")
-animation = &"down"
+animation = &"idle_right"

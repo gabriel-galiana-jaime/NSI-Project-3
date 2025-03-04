@@ -125,7 +125,6 @@ sources/0 = SubResource("TileSetAtlasSource_hqkqv")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 z_index = 10
-position = Vector2(16, 0)
 zoom = Vector2(10, 10)
 editor_draw_limits = true
 editor_draw_drag_margin = true
