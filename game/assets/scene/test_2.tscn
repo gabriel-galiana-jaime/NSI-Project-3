@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://blc72jomj0yyi"]
+[gd_scene load_steps=12 format=4 uid="uid://blc72jomj0yyi"]
 
 [ext_resource type="Texture2D" uid="uid://cxughcr1um8fh" path="res://assets/artwork/player/linkwalksheet.png" id="1_ap20h"]
 [ext_resource type="Script" uid="uid://cnsegtfjs60ef" path="res://assets/script/playercontroller.gd" id="1_uoqcl"]
+[ext_resource type="Texture2D" uid="uid://s6hnqdfj7oro" path="res://assets/artwork/tileset/tileset2.png" id="3_2qfw4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8by0f"]
 size = Vector2(9, 8)
@@ -47,12 +48,129 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hqkqv"]
+texture = ExtResource("3_2qfw4")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+10:4/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_fwcbn"]
+sources/0 = SubResource("TileSetAtlasSource_hqkqv")
+
 [node name="test2" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(9, 9)
+position = Vector2(12, -7)
+zoom = Vector2(10, 10)
 
 [node name="player" type="CharacterBody2D" parent="."]
+z_index = 4
 script = ExtResource("1_uoqcl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
@@ -64,3 +182,7 @@ shape = SubResource("RectangleShape2D_8by0f")
 sprite_frames = SubResource("SpriteFrames_3534w")
 animation = &"down"
 frame_progress = 0.30933
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD8//7/AAADAAUAAAD9//7/AAADAAUAAAD+//7/AAADAAUAAAD+////AAADAAUAAAD/////AAADAAUAAAAAAP//AAADAAUAAAABAP//AAADAAUAAAACAP//AAADAAUAAAADAP//AAADAAUAAAD9////AAADAAUAAAD8////AAADAAUAAAD7////AAADAAUAAAD+/wAAAAADAAUAAAD//wEAAAADAAUAAAAAAAEAAAADAAUAAAABAAEAAAADAAUAAAABAAAAAAADAAUAAAAAAAAAAAADAAUAAAD//wAAAAADAAUAAAD9/wAAAAADAAUAAAD8/wAAAAADAAUAAAD7/wAAAAADAAUAAAD8/wEAAAADAAUAAAD9/wEAAAADAAUAAAD+/wEAAAADAAUAAAD//wIAAAADAAUAAAD+/wIAAAADAAUAAAD9/wIAAAADAAUAAAD8/wIAAAADAAUAAAD7/wEAAAADAAUAAAD7/wIAAAADAAUAAAAAAAIAAAADAAUAAAABAAIAAAADAAUAAAACAAIAAAADAAUAAAADAAIAAAADAAUAAAADAAEAAAADAAUAAAADAAAAAAADAAUAAAACAAAAAAADAAUAAAACAAEAAAADAAUAAAAEAP//AAADAAUAAAAEAAAAAAADAAUAAAAEAAEAAAADAAUAAAAEAAIAAAADAAUAAAADAP7/AAADAAUAAAACAP7/AAADAAUAAAABAP7/AAADAAUAAAAAAP7/AAADAAUAAAD///7/AAADAAUAAAD7//7/AAADAAUAAAAEAP7/AAADAAUAAAAFAP7/AAADAAUAAAAFAP//AAADAAUAAAAFAAAAAAADAAUAAAAFAAEAAAADAAUAAAAFAAIAAAADAAUAAAD7//v/AAAHAAQAAAD7//z/AAAHAAUAAAD7//3/AAAHAAYAAAAFAPv/AAAIAAQAAAAFAPz/AAAIAAUAAAAFAP3/AAAIAAYAAAD///z/AAAAAAQAAAD///3/AAAAAAUAAAAAAPz/AAABAAQAAAAAAP3/AAABAAUAAAABAPz/AAACAAQAAAABAP3/AAACAAUAAAD9//v/AAAKAAQAAAD9//z/AAAJAAMAAAD9//3/AAAJAAMAAAADAPv/AAAKAAQAAAADAPz/AAAJAAMAAAADAP3/AAAJAAMAAAACAPv/AAAHAAQAAAACAPz/AAAHAAUAAAACAP3/AAAHAAYAAAD+//v/AAAIAAQAAAD+//z/AAAIAAUAAAD+//3/AAAIAAYAAAD8//z/AAAJAAMAAAD8//3/AAAJAAMAAAD8//v/AAAKAAQAAAAEAP3/AAAJAAMAAAAEAPz/AAAJAAMAAAAEAPv/AAAKAAQAAAD7/wMAAAAFAAUAAAD9/wMAAAAFAAUAAAD//wMAAAAFAAUAAAABAAMAAAAFAAUAAAADAAMAAAAFAAUAAAAFAAMAAAAFAAUAAAAGAP7/AAADAAUAAAAGAP//AAADAAUAAAAGAAAAAAADAAUAAAAGAAEAAAADAAUAAAAGAAIAAAADAAUAAAAGAPz/AAADAAUAAAAGAP3/AAADAAUAAAAHAPz/AAADAAUAAAAHAP3/AAADAAUAAAAHAP7/AAADAAUAAAAHAP//AAADAAUAAAAHAAAAAAADAAUAAAAHAAEAAAADAAUAAAAHAAIAAAADAAUAAAAIAAIAAAADAAUAAAAIAPz/AAADAAUAAAAIAP3/AAADAAUAAAAIAP7/AAADAAUAAAAIAP//AAADAAUAAAAIAAAAAAADAAUAAAAIAAEAAAADAAUAAAA=")
+tile_set = SubResource("TileSet_fwcbn")
