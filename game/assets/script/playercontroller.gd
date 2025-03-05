@@ -15,7 +15,7 @@ func _process(delta: float) -> void:
 	input_axis_()
 	state_machine()
 	animation_player()
-	velocity = input_axis * 3500
+	velocity = input_axis * 2500
 	velocity =  velocity * delta
 	move_and_slide()
 	pass
