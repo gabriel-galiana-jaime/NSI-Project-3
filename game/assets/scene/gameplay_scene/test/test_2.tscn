@@ -130,6 +130,8 @@ limit_left = -260
 limit_top = -190
 limit_right = 270
 limit_bottom = 130
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
 editor_draw_limits = true
 editor_draw_drag_margin = true
 

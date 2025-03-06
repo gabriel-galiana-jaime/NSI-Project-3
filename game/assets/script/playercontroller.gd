@@ -11,12 +11,12 @@ var state_player : Dictionary = {"looking":"down","action":"idle"}
 """
 func _ready() -> void:
 	state_player = {"look":"down","action":"idle"}
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	input_axis_()
 	state_machine()
 	animation_player()
-	velocity = input_axis * 4000
-	velocity =  velocity * delta
+	velocity = input_axis * 3000 * delta
+	#velocity =  velocity * delta
 	move_and_slide()
 	pass
 
