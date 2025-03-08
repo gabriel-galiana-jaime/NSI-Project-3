@@ -12,7 +12,10 @@
 tile_set = ExtResource("1_bel82")
 
 [node name="TileMapLayer1" type="TileMapLayer" parent="world/tilemanager"]
+tile_set = ExtResource("1_bel82")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="world/tilemanager"]
+tile_set = ExtResource("1_bel82")
 
 [node name="TileMapLayer4" type="TileMapLayer" parent="world/tilemanager"]
+tile_set = ExtResource("1_bel82")
