@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvyxatrb46aym"]
+
+[ext_resource type="TileSet" uid="uid://blced4cj5l5jr" path="res://assets/gd_ressources/tilesets/nts_map.tres" id="1_bel82"]
+
+[node name="overworldvillage" type="Node2D"]
+
+[node name="world" type="Node2D" parent="."]
+
+[node name="tilemanager" type="Node2D" parent="world"]
+
+[node name="TileMapLayer0" type="TileMapLayer" parent="world/tilemanager"]
+tile_set = ExtResource("1_bel82")
