@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="NSI-1A-Zelda-NES"
-run/main_scene="uid://blc72jomj0yyi"
+run/main_scene="uid://cvyxatrb46aym"
 config/features=PackedStringArray("4.4", "Forward Plus")
 run/max_fps=60
 config/icon="res://icon.svg"
