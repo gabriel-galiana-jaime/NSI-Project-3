@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=4 uid="uid://cvyxatrb46aym"]
+[gd_scene load_steps=3 format=4 uid="uid://cvyxatrb46aym"]
 
 [ext_resource type="TileSet" uid="uid://blced4cj5l5jr" path="res://assets/gd_ressources/tilesets/nts_map.tres" id="1_bel82"]
+[ext_resource type="PackedScene" uid="uid://drhqo6y0dw6sv" path="res://assets/scene/object_scene/player/player.tscn" id="2_arjcr"]
 
 [node name="overworldvillage" type="Node2D"]
 
@@ -32,12 +33,21 @@ tile_set = ExtResource("1_bel82")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 z_index = 10
+position = Vector2(-5, 55)
 zoom = Vector2(10, 10)
-limit_left = -260
-limit_top = -190
+limit_left = -140
+limit_top = -110
 limit_right = 270
-limit_bottom = 130
+limit_bottom = 265
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
 editor_draw_limits = true
 editor_draw_drag_margin = true
+
+[node name="player" parent="." instance=ExtResource("2_arjcr")]
+position = Vector2(-5, 55)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="player"]
+remote_path = NodePath("../../Camera2D")
+update_rotation = false
+update_scale = false
