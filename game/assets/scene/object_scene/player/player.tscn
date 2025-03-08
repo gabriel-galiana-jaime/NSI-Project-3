@@ -4,7 +4,7 @@
 [ext_resource type="SpriteFrames" uid="uid://bsvgwp4yfya3r" path="res://assets/gd_ressources/sprite_frames/player/npf_main_player.tres" id="2_61gdb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8by0f"]
-size = Vector2(9, 8)
+size = Vector2(9, 5)
 
 [node name="player" type="CharacterBody2D"]
 z_index = 4
@@ -12,7 +12,7 @@ script = ExtResource("1_7mfsg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 3
-position = Vector2(-0.5, 4)
+position = Vector2(-0.5, 5.5)
 shape = SubResource("RectangleShape2D_8by0f")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
