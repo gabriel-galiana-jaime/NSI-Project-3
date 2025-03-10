@@ -11,7 +11,7 @@ var state_player : Dictionary = {"looking":"down","action":"idle"}
 """
 func _ready() -> void:
 	state_player = {"look":"down","action":"idle"}
-	position = auto_main_autoload_script.round_position_player(position)
+	position = auto_main_autoload_script.round_position(position)
 func _physics_process(delta: float) -> void:
 	input_axis_()
 	state_machine()
