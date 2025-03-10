@@ -26,6 +26,10 @@ func input_axis_():
 	pass
 
 func state_machine():
+	if Input.get_action_raw_strength("action_b") >= 1:
+		state_player["action"] = "shield"
+	else:
+		state_player["action"] = "idle"
 	if input_axis.y >= 1:
 		state_player["look"] = "down"
 	if input_axis.y <= -1:
@@ -34,29 +38,53 @@ func state_machine():
 		state_player["look"] = "right"
 	if input_axis.x <= -1:
 		state_player["look"] = "left"
-	
+	#print(state_player)
 	pass
 
 func animation_player():
-	anim_pl.flip_h = false
-	if state_player["look"] == "right":
-		if abs(input_axis.x) >= 1:
-			anim_pl.play("run_right")
-		else:
-			anim_pl.play("idle_right")
-	if state_player["look"] == "left":
-		anim_pl.flip_h = true
-		if abs(input_axis.x) >= 1:
-			anim_pl.play("run_right")
-		else:
-			anim_pl.play("idle_right")
-	if state_player["look"] == "up":
-		if abs(input_axis.y) >= 1:
-			anim_pl.play("run_up")
-		else:
-			anim_pl.play("idle_up")
-	if state_player["look"] == "down":
-		if abs(input_axis.y) >= 1:
-			anim_pl.play("run_down")
-		else:
-			anim_pl.play("idle_down")
+	if state_player["action"] == "idle":
+		anim_pl.flip_h = false
+		if state_player["look"] == "right":
+			if abs(input_axis.x) >= 1:
+				anim_pl.play("run_right")
+			else:
+				anim_pl.play("idle_right")
+		if state_player["look"] == "left":
+			anim_pl.flip_h = true
+			if abs(input_axis.x) >= 1:
+				anim_pl.play("run_right")
+			else:
+				anim_pl.play("idle_right")
+		if state_player["look"] == "up":
+			if abs(input_axis.y) >= 1:
+				anim_pl.play("run_up")
+			else:
+				anim_pl.play("idle_up")
+		if state_player["look"] == "down":
+			if abs(input_axis.y) >= 1:
+				anim_pl.play("run_down")
+			else:
+				anim_pl.play("idle_down")
+	elif state_player["action"] == "shield":
+		anim_pl.flip_h = false
+		if state_player["look"] == "right":
+			if abs(input_axis.x) >= 1:
+				anim_pl.play("shield_run_right")
+			else:
+				anim_pl.play("shield_idle_right")
+		if state_player["look"] == "left":
+			anim_pl.flip_h = true
+			if abs(input_axis.x) >= 1:
+				anim_pl.play("shield_run_right")
+			else:
+				anim_pl.play("shield_idle_right")
+		if state_player["look"] == "up":
+			if abs(input_axis.y) >= 1:
+				anim_pl.play("shield_run_up")
+			else:
+				anim_pl.play("shield_idle_up")
+		if state_player["look"] == "down":
+			if abs(input_axis.y) >= 1:
+				anim_pl.play("shield_run_down")
+			else:
+				anim_pl.play("shield_idle_down")
