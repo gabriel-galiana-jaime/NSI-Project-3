@@ -10,6 +10,18 @@ texture = ExtResource("1_48ie4")
 7:2/animation_frame_2/duration = 0.2
 7:2/animation_frame_3/duration = 0.2
 7:2/0 = 0
+7:0/animation_columns = 4
+7:0/animation_frame_0/duration = 0.2
+7:0/animation_frame_1/duration = 0.2
+7:0/animation_frame_2/duration = 0.2
+7:0/animation_frame_3/duration = 0.2
+7:0/0 = 0
+7:1/animation_columns = 4
+7:1/animation_frame_0/duration = 0.2
+7:1/animation_frame_1/duration = 0.2
+7:1/animation_frame_2/duration = 0.2
+7:1/animation_frame_3/duration = 0.2
+7:1/0 = 0
 
 [resource]
 sources/1 = SubResource("TileSetAtlasSource_48ie4")
