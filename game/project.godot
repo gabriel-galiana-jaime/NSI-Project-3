@@ -21,6 +21,7 @@ config/icon="res://icon.svg"
 
 auto_fullscreen="*res://addons/fullscreen on input/fullscreen_on_input.gd"
 SceneManager="*res://addons/awesome_scene_manager/autoloads/SceneManager.tscn"
+auto_main_autoload_script="*res://assets/script/autoload/main_autoload_script.gd"
 
 [display]
 
