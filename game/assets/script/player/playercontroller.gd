@@ -41,7 +41,7 @@ func state_machine():
 		state_player["look"] = "right"
 	if input_axis.x <= -1:
 		state_player["look"] = "left"
-	print(state_player)
+	#print(state_player)
 	pass
 
 func animation_player():
