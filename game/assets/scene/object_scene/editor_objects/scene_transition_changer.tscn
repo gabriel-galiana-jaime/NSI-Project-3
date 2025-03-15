@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://0jq12fpkgtg2"]
+
+[ext_resource type="Script" uid="uid://bgfeaxhqifkna" path="res://assets/script/objects/editor_objects/scr_scene_transition_changer.gd" id="1_o143e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4a2g3"]
+
+[node name="scene_transition_changer" type="Area2D"]
+z_index = 11
+script = ExtResource("1_o143e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4a2g3")
+debug_color = Color(0.541321, 0.406728, 1, 0.42)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
