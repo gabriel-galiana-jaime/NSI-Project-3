@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://bk8dusylcc6c5"]
+
+[ext_resource type="TileSet" uid="uid://bomjqlwmposuo" path="res://assets/gd_ressources/tilesets/nts_water.tres" id="1_1823y"]
+[ext_resource type="TileSet" uid="uid://blced4cj5l5jr" path="res://assets/gd_ressources/tilesets/nts_map.tres" id="2_ydkb3"]
+
+[node name="tilemanager" type="Node2D"]
+
+[node name="main_tilemap" type="Node2D" parent="."]
+
+[node name="TileMapLayer_water" type="TileMapLayer" parent="main_tilemap"]
+tile_set = ExtResource("1_1823y")
+
+[node name="TileMapLayer_1" type="TileMapLayer" parent="main_tilemap"]
+z_index = 1
+tile_set = ExtResource("2_ydkb3")
+
+[node name="TileMapLayer_2" type="TileMapLayer" parent="main_tilemap"]
+z_index = 2
+tile_set = ExtResource("2_ydkb3")
+
+[node name="TileMapLayer_3" type="TileMapLayer" parent="main_tilemap"]
+z_index = 3
+tile_set = ExtResource("2_ydkb3")
+
+[node name="TileMapLayer_4" type="TileMapLayer" parent="main_tilemap"]
+z_index = 4
+tile_set = ExtResource("2_ydkb3")
+
+[node name="TileMapLayer_7" type="TileMapLayer" parent="main_tilemap"]
+z_index = 6
+tile_set = ExtResource("2_ydkb3")
