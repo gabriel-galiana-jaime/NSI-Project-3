@@ -7,6 +7,10 @@
 
 [node name="main_tilemap" type="Node2D" parent="."]
 
+[node name="TileMapLayer_collsiion" type="TileMapLayer" parent="main_tilemap"]
+z_index = 10
+tile_set = ExtResource("2_ydkb3")
+
 [node name="TileMapLayer_water" type="TileMapLayer" parent="main_tilemap"]
 tile_set = ExtResource("1_1823y")
 
