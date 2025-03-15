@@ -47,7 +47,7 @@ tile_set = ExtResource("1_bel82")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 z_index = 10
-position = Vector2(-12, 106)
+position = Vector2(-17, 111)
 zoom = Vector2(10, 10)
 limit_left = -140
 limit_top = -40
@@ -58,7 +58,7 @@ editor_draw_limits = true
 editor_draw_drag_margin = true
 
 [node name="player" parent="." instance=ExtResource("2_arjcr")]
-position = Vector2(-12, 106)
+position = Vector2(-17, 111)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="player"]
 remote_path = NodePath("../../Camera2D")
@@ -72,3 +72,4 @@ autoplay = true
 position = Vector2(-8, 87)
 scale = Vector2(0.525, 0.525)
 scene_to_go = "house1"
+spawn_player_position = Vector2(-23, 187)

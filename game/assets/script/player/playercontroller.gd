@@ -10,6 +10,7 @@ var state_player : Dictionary = {"looking":"down","action":"idle"}
 !state_player! est utiliser pour pouvoir detecter l'état du joueur.
 """
 func _ready() -> void:
+	position = auto_main_autoload_script.global_spawn_player_position
 	add_to_group("player")
 	state_player = {"look":"down","action":"idle"}
 	#position = auto_main_autoload_script.round_position(position)
