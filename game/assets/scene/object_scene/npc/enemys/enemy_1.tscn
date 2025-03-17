@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dt72vmi4gowdd"]
+
+[ext_resource type="SpriteFrames" uid="uid://blrb2vpxhxoqd" path="res://assets/gd_ressources/sprite_frames/npc/enemys/nsf_enemy1.tres" id="1_mgntq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6hlad"]
+size = Vector2(14, 12)
+
+[node name="enemy1" type="CharacterBody2D"]
+z_index = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6hlad")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_mgntq")
+frame_progress = 0.758483

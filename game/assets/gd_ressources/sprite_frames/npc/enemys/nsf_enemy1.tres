@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://blrb2vpxhxoqd"]
+
+[ext_resource type="Texture2D" uid="uid://dn65b2lm6jlqh" path="res://assets/artwork/npc/enemys/obs1sheet.png" id="1_x524g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvi2m"]
+atlas = ExtResource("1_x524g")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5pbnj"]
+atlas = ExtResource("1_x524g")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_faidk"]
+atlas = ExtResource("1_x524g")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eddgg"]
+atlas = ExtResource("1_x524g")
+region = Rect2(48, 0, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_wvi2m")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_5pbnj")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_faidk")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_eddgg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
