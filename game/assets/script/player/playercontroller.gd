@@ -2,9 +2,11 @@ extends CharacterBody2D
 
 #All the obj references:
 @onready var anim_pl = $AnimatedSprite2D
-
+@onready var shield_collsiion = $Area2D_collision
 var input_axis = Vector2(0,0)
 var state_player : Dictionary = {"looking":"down","action":"idle"}
+
+
 
 """
 !state_player! est utiliser pour pouvoir detecter l'état du joueur.
@@ -21,6 +23,7 @@ func _physics_process(delta: float) -> void:
 	velocity = input_axis * 3000 * delta
 	#velocity =  velocity * delta
 	move_and_slide()
+	auto_main_autoload_script.player_data = state_player
 	pass
 
 func input_axis_():
@@ -116,3 +119,8 @@ func animation_player():
 				anim_pl.play("water_run_down")
 			else:
 				anim_pl.play("water_idle_down")
+
+func control_shield_collision():
+	#Define the shape and position
+	if state_player["look"] == "down":
+		shield_collsiion.get_child(0).position = Vector2(0.25,8.0)

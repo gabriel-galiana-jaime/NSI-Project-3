@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://cvyxatrb46aym"]
+[gd_scene load_steps=6 format=4 uid="uid://cvyxatrb46aym"]
 
 [ext_resource type="TileSet" uid="uid://blced4cj5l5jr" path="res://assets/gd_ressources/tilesets/nts_map.tres" id="1_bel82"]
 [ext_resource type="TileSet" uid="uid://bomjqlwmposuo" path="res://assets/gd_ressources/tilesets/nts_water.tres" id="1_qod82"]
 [ext_resource type="PackedScene" uid="uid://drhqo6y0dw6sv" path="res://assets/scene/object_scene/player/player.tscn" id="2_arjcr"]
 [ext_resource type="PackedScene" uid="uid://0jq12fpkgtg2" path="res://assets/scene/object_scene/editor_objects/scene_transition_changer.tscn" id="4_udeun"]
 [ext_resource type="PackedScene" uid="uid://dt72vmi4gowdd" path="res://assets/scene/object_scene/npc/enemys/enemy_1.tscn" id="5_6hlad"]
-[ext_resource type="Script" uid="uid://dxji5qk4em0ja" path="res://assets/script/npc/enemys/enemy_1.gd" id="6_cv0av"]
 
 [node name="overworldvillage" type="Node2D"]
 
@@ -43,7 +42,7 @@ z_index = 4
 tile_set = ExtResource("1_bel82")
 
 [node name="TileMapLayer_7" type="TileMapLayer" parent="world/main_tilemap"]
-z_index = 6
+z_index = 7
 tile_map_data = PackedByteArray("AAACABIAAAAGAAMAAAD5/xAAAAADAAYAAAD6/xAAAAAEAAYAAAAFAAMAAAALAAoAAAAGAAMAAAALAAoAAAAHAAMAAAALAAoAAAAIAAMAAAALAAoAAAAJAAMAAAALAAoAAAAKAAMAAAALAAoAAAALAAMAAAALAAoAAAAMAAMAAAALAAoAAAANAAMAAAALAAoAAAAOAAMAAAALAAoAAAAPAAMAAAALAAoAAAAQAAMAAAALAAoAAAARAAMAAAALAAoAAAASAAMAAAALAAoAAAA=")
 tile_set = ExtResource("1_bel82")
 
@@ -78,4 +77,3 @@ spawn_player_position = Vector2(-23, 187)
 
 [node name="enemy1" parent="." instance=ExtResource("5_6hlad")]
 position = Vector2(-74, 249)
-script = ExtResource("6_cv0av")

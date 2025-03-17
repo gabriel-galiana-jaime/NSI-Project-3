@@ -1,16 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://dt72vmi4gowdd"]
+[gd_scene load_steps=5 format=3 uid="uid://dt72vmi4gowdd"]
 
+[ext_resource type="Script" uid="uid://dxji5qk4em0ja" path="res://assets/script/npc/enemys/enemy_1.gd" id="1_hcl7v"]
 [ext_resource type="SpriteFrames" uid="uid://blrb2vpxhxoqd" path="res://assets/gd_ressources/sprite_frames/npc/enemys/nsf_enemy1.tres" id="1_mgntq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6hlad"]
-size = Vector2(14, 12)
+size = Vector2(10, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hcl7v"]
+size = Vector2(13, 14)
 
 [node name="enemy1" type="CharacterBody2D"]
 z_index = 5
+floor_constant_speed = true
+script = ExtResource("1_hcl7v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_6hlad")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -1)
 sprite_frames = ExtResource("1_mgntq")
 frame_progress = 0.758483
+
+[node name="hit_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_area"]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_hcl7v")
+debug_color = Color(0.961711, 0.089574, 0.441944, 0.42)
