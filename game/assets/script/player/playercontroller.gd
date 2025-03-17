@@ -123,4 +123,14 @@ func animation_player():
 func control_shield_collision():
 	#Define the shape and position
 	if state_player["look"] == "down":
-		shield_collsiion.get_child(0).position = Vector2(0.25,8.0)
+		shield_collsiion.get_child(0).position = Vector2(0.685,8.035)
+		shield_collsiion.get_child(0).scale = Vector2(0.905,0.21)
+	if state_player["look"] == "left":
+		shield_collsiion.get_child(0).position = Vector2(-6.639,1)
+		shield_collsiion.get_child(0).scale = Vector2(0.135,1)
+	if state_player["look"] == "right":
+		shield_collsiion.get_child(0).position = Vector2(7,1)
+		shield_collsiion.get_child(0).scale = Vector2(0.135,1)
+	if state_player["look"] == "up":
+		shield_collsiion.get_child(0).position = Vector2(0.685,-6.685)
+		shield_collsiion.get_child(0).scale = Vector2(0.905,0.21)

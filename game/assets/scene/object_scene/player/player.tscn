@@ -7,7 +7,7 @@
 size = Vector2(9, 5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mfsg"]
-size = Vector2(13.5, 3)
+size = Vector2(34.9815, 12)
 
 [node name="player" type="CharacterBody2D"]
 z_index = 6
@@ -20,11 +20,12 @@ shape = SubResource("RectangleShape2D_8by0f")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_61gdb")
-animation = &"shield_run_down"
+animation = &"shield_run_right"
 
 [node name="Area2D_collision" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_collision"]
-position = Vector2(0.25, 8)
+position = Vector2(-6.63875, 1)
+scale = Vector2(0.135, 1)
 shape = SubResource("RectangleShape2D_7mfsg")
 debug_color = Color(0.682851, 0.50168, 0.0435558, 0.42)
