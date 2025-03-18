@@ -29,3 +29,29 @@ frame_progress = 0.758483
 position = Vector2(0.5, -1)
 shape = SubResource("RectangleShape2D_hcl7v")
 debug_color = Color(0.961711, 0.089574, 0.441944, 0.42)
+
+[node name="raycast_side" type="Node2D" parent="."]
+
+[node name="RayCast2D_right" type="RayCast2D" parent="raycast_side"]
+target_position = Vector2(9, 0)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="RayCast2D_left" type="RayCast2D" parent="raycast_side"]
+target_position = Vector2(-9, 0)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="RayCast2D_down" type="RayCast2D" parent="raycast_side"]
+target_position = Vector2(0, 9)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="RayCast2D_up" type="RayCast2D" parent="raycast_side"]
+target_position = Vector2(0, -9)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false

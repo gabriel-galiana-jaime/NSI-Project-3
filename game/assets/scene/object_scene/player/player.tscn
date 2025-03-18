@@ -24,6 +24,8 @@ sprite_frames = ExtResource("2_61gdb")
 animation = &"shield_run_right"
 
 [node name="Area2D_collision" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_collision"]
 position = Vector2(0, 8)

@@ -76,4 +76,4 @@ scene_to_go = "house1"
 spawn_player_position = Vector2(-23, 187)
 
 [node name="enemy1" parent="." instance=ExtResource("5_6hlad")]
-position = Vector2(-74, 249)
+position = Vector2(-11, 250)

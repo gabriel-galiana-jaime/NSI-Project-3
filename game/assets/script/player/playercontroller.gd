@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var anim_pl = $AnimatedSprite2D
 @onready var shield_collsiion = $Area2D_collision
 var input_axis = Vector2(0,0)
-var state_player : Dictionary = {"looking":"down","action":"idle"}
+var state_player : Dictionary = {"looking":"down","action":"idle","moving_axis_x":0,"moving_axis_y":0}
 
 
 
@@ -14,6 +14,7 @@ var state_player : Dictionary = {"looking":"down","action":"idle"}
 func _ready() -> void:
 	position = auto_main_autoload_script.global_spawn_player_position
 	add_to_group("player")
+	$Area2D_collision.add_to_group("shield")
 	state_player = {"look":"down","action":"idle"}
 	#position = auto_main_autoload_script.round_position(position)
 func _physics_process(delta: float) -> void:
@@ -30,6 +31,8 @@ func _physics_process(delta: float) -> void:
 func input_axis_():
 	input_axis =  Vector2(Input.get_action_raw_strength("right") - Input.get_action_raw_strength("left"),Input.get_action_raw_strength("down") - Input.get_action_raw_strength("up"))
 	input_axis = floor(input_axis)
+	state_player["moving_axis_x"] = input_axis.x
+	state_player["moving_axis_y"] = input_axis.y
 	pass
 
 func state_machine():
