@@ -1,17 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bun2nifx0dt6f"]
+[gd_scene load_steps=5 format=3 uid="uid://bun2nifx0dt6f"]
 
 [ext_resource type="Script" uid="uid://c10txilksvari" path="res://assets/script/ui/ui_control_gameplay.gd" id="1_ad0do"]
 [ext_resource type="Texture2D" uid="uid://dhvs0n23icjsu" path="res://assets/artwork/ui/player_display.png" id="1_o60uq"]
 [ext_resource type="SpriteFrames" uid="uid://dil0j3lkbybww" path="res://assets/gd_ressources/sprite_frames/ui/npf_ui_heart.tres" id="2_erxgx"]
+[ext_resource type="FontFile" uid="uid://dyvi2hsx7nnnw" path="res://assets/gd_ressources/fonts/Early GameBoy.ttf" id="4_2n0rw"]
 
 [node name="UI_gameplay" type="CanvasLayer"]
-
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-script = ExtResource("1_ad0do")
 
 [node name="control_2d_ui" type="Node2D" parent="."]
 scale = Vector2(6, 6)
@@ -24,3 +18,20 @@ texture = ExtResource("1_o60uq")
 position = Vector2(25, 15)
 sprite_frames = ExtResource("2_erxgx")
 animation = &"heart_3.0"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+script = ExtResource("1_ad0do")
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 134.0
+offset_right = 180.0
+offset_bottom = 231.0
+theme_override_fonts/font = ExtResource("4_2n0rw")
+theme_override_font_sizes/font_size = 24
+text = "Link"
