@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://drhqo6y0dw6sv"]
+[gd_scene load_steps=6 format=3 uid="uid://drhqo6y0dw6sv"]
 
 [ext_resource type="Script" uid="uid://cnsegtfjs60ef" path="res://assets/script/player/playercontroller.gd" id="1_7mfsg"]
 [ext_resource type="SpriteFrames" uid="uid://bsvgwp4yfya3r" path="res://assets/gd_ressources/sprite_frames/player/npf_main_player.tres" id="2_61gdb"]
+[ext_resource type="Texture2D" uid="uid://70ol8cfeehhg" path="res://icon.svg" id="3_61gdb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8by0f"]
 size = Vector2(9, 5)
@@ -25,7 +26,12 @@ animation = &"shield_run_right"
 [node name="Area2D_collision" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_collision"]
-position = Vector2(-6.63875, 1)
-scale = Vector2(0.135, 1)
+position = Vector2(0, 8)
+scale = Vector2(0.435, 0.21)
 shape = SubResource("RectangleShape2D_7mfsg")
 debug_color = Color(0.682851, 0.50168, 0.0435558, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D_collision/CollisionShape2D"]
+position = Vector2(1.02778, 5.96046e-08)
+scale = Vector2(0.289352, 0.09375)
+texture = ExtResource("3_61gdb")

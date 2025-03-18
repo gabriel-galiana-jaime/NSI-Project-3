@@ -20,6 +20,7 @@ func _physics_process(delta: float) -> void:
 	input_axis_()
 	state_machine()
 	animation_player()
+	control_shield_collision()
 	velocity = input_axis * 3000 * delta
 	#velocity =  velocity * delta
 	move_and_slide()
@@ -123,8 +124,8 @@ func animation_player():
 func control_shield_collision():
 	#Define the shape and position
 	if state_player["look"] == "down":
-		shield_collsiion.get_child(0).position = Vector2(0.685,8.035)
-		shield_collsiion.get_child(0).scale = Vector2(0.905,0.21)
+		shield_collsiion.get_child(0).position = Vector2(0,8.035)
+		shield_collsiion.get_child(0).scale = Vector2(0.435,0.21)
 	if state_player["look"] == "left":
 		shield_collsiion.get_child(0).position = Vector2(-6.639,1)
 		shield_collsiion.get_child(0).scale = Vector2(0.135,1)
@@ -133,4 +134,4 @@ func control_shield_collision():
 		shield_collsiion.get_child(0).scale = Vector2(0.135,1)
 	if state_player["look"] == "up":
 		shield_collsiion.get_child(0).position = Vector2(0.685,-6.685)
-		shield_collsiion.get_child(0).scale = Vector2(0.905,0.21)
+		shield_collsiion.get_child(0).scale = Vector2(0.435,0.21)
