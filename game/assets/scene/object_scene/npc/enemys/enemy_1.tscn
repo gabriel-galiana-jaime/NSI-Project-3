@@ -21,12 +21,15 @@ shape = SubResource("RectangleShape2D_6hlad")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -1)
 sprite_frames = ExtResource("1_mgntq")
-frame_progress = 0.758483
+animation = &"loop"
 
 [node name="hit_area" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit_area"]
 position = Vector2(0.5, -1)
+scale = Vector2(0.95, 0.95)
 shape = SubResource("RectangleShape2D_hcl7v")
 debug_color = Color(0.961711, 0.089574, 0.441944, 0.42)
 
@@ -55,3 +58,5 @@ target_position = Vector2(0, -9)
 collision_mask = 2
 collide_with_areas = true
 collide_with_bodies = false
+
+[connection signal="area_entered" from="hit_area" to="." method="_on_hit_area_area_entered"]

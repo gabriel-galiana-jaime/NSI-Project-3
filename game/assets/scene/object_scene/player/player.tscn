@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://drhqo6y0dw6sv"]
+[gd_scene load_steps=7 format=3 uid="uid://drhqo6y0dw6sv"]
 
 [ext_resource type="Script" uid="uid://cnsegtfjs60ef" path="res://assets/script/player/playercontroller.gd" id="1_7mfsg"]
 [ext_resource type="SpriteFrames" uid="uid://bsvgwp4yfya3r" path="res://assets/gd_ressources/sprite_frames/player/npf_main_player.tres" id="2_61gdb"]
@@ -9,6 +9,9 @@ size = Vector2(9, 5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mfsg"]
 size = Vector2(34.9815, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_61gdb"]
+size = Vector2(13, 9)
 
 [node name="player" type="CharacterBody2D"]
 z_index = 6
@@ -38,3 +41,12 @@ visible = false
 position = Vector2(1.02778, 5.96046e-08)
 scale = Vector2(0.289352, 0.09375)
 texture = ExtResource("3_61gdb")
+
+[node name="hit_box" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_box"]
+position = Vector2(-0.5, 5.5)
+shape = SubResource("RectangleShape2D_61gdb")
+debug_color = Color(0.0838211, 0.639906, 0.319423, 0.42)
