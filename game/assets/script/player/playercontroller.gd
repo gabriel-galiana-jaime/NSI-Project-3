@@ -6,7 +6,8 @@ extends CharacterBody2D
 var input_axis = Vector2(0,0)
 var state_player : Dictionary = {"looking":"down","action":"idle","moving_axis_x":0,"moving_axis_y":0}
 
-
+var max_health : float = 3
+var health : float = 3
 
 """
 !state_player! est utiliser pour pouvoir detecter l'état du joueur.
