@@ -1,0 +1,90 @@
+[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://dil0j3lkbybww"]
+
+[ext_resource type="Texture2D" uid="uid://bd5hclkom21w7" path="res://assets/artwork/ui/hearthsheet.png" id="1_51daw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ls4nu"]
+atlas = ExtResource("1_51daw")
+region = Rect2(42, 0, 7, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8e3g"]
+atlas = ExtResource("1_51daw")
+region = Rect2(35, 0, 7, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skqpb"]
+atlas = ExtResource("1_51daw")
+region = Rect2(28, 0, 7, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jb5kv"]
+atlas = ExtResource("1_51daw")
+region = Rect2(21, 0, 7, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wtkqg"]
+atlas = ExtResource("1_51daw")
+region = Rect2(14, 0, 7, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51daw"]
+atlas = ExtResource("1_51daw")
+region = Rect2(7, 0, 7, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_avoly"]
+atlas = ExtResource("1_51daw")
+region = Rect2(0, 0, 7, 24)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ls4nu")
+}],
+"loop": true,
+"name": &"heart_0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j8e3g")
+}],
+"loop": true,
+"name": &"heart_0.5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skqpb")
+}],
+"loop": true,
+"name": &"heart_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jb5kv")
+}],
+"loop": true,
+"name": &"heart_1.5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wtkqg")
+}],
+"loop": true,
+"name": &"heart_2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_51daw")
+}],
+"loop": true,
+"name": &"heart_2.5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_avoly")
+}],
+"loop": true,
+"name": &"heart_3",
+"speed": 5.0
+}]

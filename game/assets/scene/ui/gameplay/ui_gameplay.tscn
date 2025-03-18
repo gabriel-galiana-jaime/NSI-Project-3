@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bun2nifx0dt6f"]
+
+[ext_resource type="Texture2D" uid="uid://dhvs0n23icjsu" path="res://assets/artwork/ui/player_display.png" id="1_o60uq"]
+[ext_resource type="SpriteFrames" uid="uid://dil0j3lkbybww" path="res://assets/gd_ressources/sprite_frames/ui/npf_ui_heart.tres" id="2_erxgx"]
+
+[node name="UI_gameplay" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="control_2d_ui" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="control_2d_ui"]
+position = Vector2(36, 34)
+texture = ExtResource("1_o60uq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="control_2d_ui"]
+position = Vector2(25, 15)
+sprite_frames = ExtResource("2_erxgx")
+animation = &"heart_0"
