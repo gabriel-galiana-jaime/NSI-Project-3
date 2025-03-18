@@ -37,7 +37,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_ls4nu")
 }],
 "loop": true,
-"name": &"heart_0",
+"name": &"heart_0.0",
 "speed": 5.0
 }, {
 "frames": [{
@@ -53,7 +53,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_skqpb")
 }],
 "loop": true,
-"name": &"heart_1",
+"name": &"heart_1.0",
 "speed": 5.0
 }, {
 "frames": [{
@@ -69,7 +69,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_wtkqg")
 }],
 "loop": true,
-"name": &"heart_2",
+"name": &"heart_2.0",
 "speed": 5.0
 }, {
 "frames": [{
@@ -85,6 +85,6 @@ animations = [{
 "texture": SubResource("AtlasTexture_avoly")
 }],
 "loop": true,
-"name": &"heart_3",
+"name": &"heart_3.0",
 "speed": 5.0
 }]

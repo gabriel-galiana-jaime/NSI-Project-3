@@ -4,10 +4,10 @@ extends CharacterBody2D
 @onready var anim_pl = $AnimatedSprite2D
 @onready var shield_collsiion = $Area2D_collision
 var input_axis = Vector2(0,0)
-var state_player : Dictionary = {"looking":"down","action":"idle","moving_axis_x":0,"moving_axis_y":0}
+var state_player : Dictionary = {"looking":"down","action":"idle","moving_axis_x":0,"moving_axis_y":0,"health":3}
 
 var max_health : float = 3
-var health : float = 3
+@export var health : float = 3
 
 """
 !state_player! est utiliser pour pouvoir detecter l'état du joueur.
@@ -23,6 +23,7 @@ func _physics_process(delta: float) -> void:
 	state_machine()
 	animation_player()
 	control_shield_collision()
+	state_player["health"] =  health
 	velocity = input_axis * 3000 * delta
 	#velocity =  velocity * delta
 	move_and_slide()
