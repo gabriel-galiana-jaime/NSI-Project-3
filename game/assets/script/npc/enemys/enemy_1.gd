@@ -27,5 +27,15 @@ func move_by_player(delta):
 		collide = raycast_right.get_collider()
 		if collide.is_in_group("shield") and auto_main_autoload_script.player_data["look"] == "left" and  auto_main_autoload_script.player_data["moving_axis_x"] == -1:
 			velocity = Vector2(speed*-1,speed*0)
-		pass
-	pass
+	if raycast_left.is_colliding():
+		collide = raycast_left.get_collider()
+		if collide.is_in_group("shield") and auto_main_autoload_script.player_data["look"] == "right" and  auto_main_autoload_script.player_data["moving_axis_x"] == 1:
+			velocity = Vector2(speed*1,speed*0)
+	if raycast_down.is_colliding():
+		collide = raycast_down.get_collider()
+		if collide.is_in_group("shield") and auto_main_autoload_script.player_data["look"] == "up" and  auto_main_autoload_script.player_data["moving_axis_y"] == -1:
+			velocity = Vector2(speed*0,speed*-1)
+	if raycast_up.is_colliding():
+		collide = raycast_up.get_collider()
+		if collide.is_in_group("shield") and auto_main_autoload_script.player_data["look"] == "down" and  auto_main_autoload_script.player_data["moving_axis_y"] == 1:
+			velocity = Vector2(speed*0,speed*1)
