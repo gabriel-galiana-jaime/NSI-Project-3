@@ -5,22 +5,22 @@
 [resource]
 script = ExtResource("1_awunv")
 starts = {
-"intro": &"0_1"
+"intro1": &"0_1"
 }
 nodes = {
 &"0_1": {
 "link": &"1_1",
 "offset": Vector2(-60, 200),
-"start_id": "intro"
+"start_id": "intro1"
 },
 &"1_1": {
-"dialogue": "Tu es en sécurité maintenant. Je m'appelle Mari. Nous t'avons retrouvé inconscients à la plage ce matin.",
+"dialogue": "Tu es en sécurité maintenant. Je m'appelle Marin. Nous t'avons retrouvé inconscients à la plage ce matin.",
 "offset": Vector2(260, 160),
 "options": {
 0: {
 "condition": {},
 "link": &"1_2",
-"text": ""
+"text": "Taru a quelque chose pour toi."
 }
 },
 "size": Vector2(300, 240),

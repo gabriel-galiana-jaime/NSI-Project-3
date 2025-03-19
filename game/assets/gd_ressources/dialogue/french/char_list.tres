@@ -11,7 +11,7 @@ metadata/_custom_type_script = "uid://dyla0pcy52iei"
 
 [sub_resource type="Resource" id="Resource_3abwg"]
 script = ExtResource("1_fbyg7")
-name = "Mari"
+name = "Marin"
 color = Color(0.923266, 0.470396, 0.169652, 1)
 metadata/_custom_type_script = "uid://dyla0pcy52iei"
 
