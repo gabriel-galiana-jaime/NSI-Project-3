@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="CharacterList" load_steps=5 format=3 uid="uid://b0r4vs4eh7b7q"]
+
+[ext_resource type="Script" uid="uid://dyla0pcy52iei" path="res://addons/dialogue_nodes/objects/Character.gd" id="1_fbyg7"]
+[ext_resource type="Script" uid="uid://b38t1w2bisum7" path="res://addons/dialogue_nodes/objects/CharacterList.gd" id="2_3abwg"]
+
+[sub_resource type="Resource" id="Resource_fbyg7"]
+script = ExtResource("1_fbyg7")
+name = "Link"
+color = Color(0.459501, 0.636976, 0.107307, 1)
+metadata/_custom_type_script = "uid://dyla0pcy52iei"
+
+[sub_resource type="Resource" id="Resource_3abwg"]
+script = ExtResource("1_fbyg7")
+name = "Mari"
+color = Color(0.923266, 0.470396, 0.169652, 1)
+metadata/_custom_type_script = "uid://dyla0pcy52iei"
+
+[resource]
+script = ExtResource("2_3abwg")
+characters = Array[ExtResource("1_fbyg7")]([SubResource("Resource_fbyg7"), SubResource("Resource_3abwg")])
+metadata/_custom_type_script = "uid://b38t1w2bisum7"
