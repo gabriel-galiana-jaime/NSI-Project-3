@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://cvyxatrb46aym"]
+[gd_scene load_steps=9 format=4 uid="uid://cvyxatrb46aym"]
 
 [ext_resource type="TileSet" uid="uid://blced4cj5l5jr" path="res://assets/gd_ressources/tilesets/nts_map.tres" id="1_bel82"]
 [ext_resource type="TileSet" uid="uid://bomjqlwmposuo" path="res://assets/gd_ressources/tilesets/nts_water.tres" id="1_qod82"]
@@ -6,6 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://0jq12fpkgtg2" path="res://assets/scene/object_scene/editor_objects/scene_transition_changer.tscn" id="4_udeun"]
 [ext_resource type="PackedScene" uid="uid://dt72vmi4gowdd" path="res://assets/scene/object_scene/npc/enemys/enemy_1.tscn" id="5_6hlad"]
 [ext_resource type="PackedScene" uid="uid://bun2nifx0dt6f" path="res://assets/scene/ui/gameplay/ui_gameplay.tscn" id="6_cv0av"]
+[ext_resource type="SpriteFrames" uid="uid://ddl4deddji6ak" path="res://assets/gd_ressources/sprite_frames/npc/villagers/nsf_marin.tres" id="7_cxrml"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cv0av"]
+size = Vector2(10, 6)
 
 [node name="overworldvillage" type="Node2D"]
 
@@ -80,3 +84,16 @@ spawn_player_position = Vector2(-23, 187)
 position = Vector2(-11, 250)
 
 [node name="UI_gameplay" parent="." instance=ExtResource("6_cv0av")]
+
+[node name="npc_marin" type="CharacterBody2D" parent="."]
+z_index = 6
+position = Vector2(-50, 79)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="npc_marin"]
+z_index = 1
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_cv0av")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="npc_marin"]
+sprite_frames = ExtResource("7_cxrml")
+animation = &"idle_down"

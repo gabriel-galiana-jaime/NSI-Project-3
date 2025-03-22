@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://ddl4deddji6ak"]
+
+[ext_resource type="Texture2D" uid="uid://q3gsllidsgg0" path="res://assets/artwork/npc/char/marin_sheet.png" id="1_huxrk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68s1m"]
+atlas = ExtResource("1_huxrk")
+region = Rect2(0, 0, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68s1m")
+}],
+"loop": true,
+"name": &"idle_down",
+"speed": 5.0
+}]
