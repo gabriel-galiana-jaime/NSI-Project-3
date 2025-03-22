@@ -5,4 +5,5 @@ extends Control
 func _process(delta: float) -> void:
 	#print(str(auto_main_autoload_script.player_data["health"]))
 	ui_health.play("heart_"+ str(auto_main_autoload_script.player_health))
+	#$DialogueBox.start("intro1")
 	pass

@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=4 uid="uid://cvyxatrb46aym"]
+[gd_scene load_steps=10 format=4 uid="uid://cvyxatrb46aym"]
 
 [ext_resource type="TileSet" uid="uid://blced4cj5l5jr" path="res://assets/gd_ressources/tilesets/nts_map.tres" id="1_bel82"]
 [ext_resource type="TileSet" uid="uid://bomjqlwmposuo" path="res://assets/gd_ressources/tilesets/nts_water.tres" id="1_qod82"]
 [ext_resource type="PackedScene" uid="uid://drhqo6y0dw6sv" path="res://assets/scene/object_scene/player/player.tscn" id="2_arjcr"]
+[ext_resource type="AudioStream" uid="uid://c2b3rncb8qeg4" path="res://assets/artwork/music/10.Zelda Link's Awakening OST - Overworld [9FYkL2D3d7M].mp3" id="4_susuf"]
 [ext_resource type="PackedScene" uid="uid://0jq12fpkgtg2" path="res://assets/scene/object_scene/editor_objects/scene_transition_changer.tscn" id="4_udeun"]
 [ext_resource type="PackedScene" uid="uid://dt72vmi4gowdd" path="res://assets/scene/object_scene/npc/enemys/enemy_1.tscn" id="5_6hlad"]
 [ext_resource type="PackedScene" uid="uid://bun2nifx0dt6f" path="res://assets/scene/ui/gameplay/ui_gameplay.tscn" id="6_cv0av"]
@@ -71,8 +72,16 @@ remote_path = NodePath("../../Camera2D")
 update_rotation = false
 update_scale = false
 
+[node name="AudioListener2D" type="AudioListener2D" parent="player"]
+position = Vector2(0, 6)
+current = true
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-75, 269)
+stream = ExtResource("4_susuf")
 autoplay = true
+max_distance = 210.0
+attenuation = 1.36604
 
 [node name="scene_transition_changer" parent="." instance=ExtResource("4_udeun")]
 position = Vector2(-8, 87)

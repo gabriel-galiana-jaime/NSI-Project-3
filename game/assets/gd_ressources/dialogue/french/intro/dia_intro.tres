@@ -14,7 +14,7 @@ nodes = {
 "start_id": "intro1"
 },
 &"1_1": {
-"dialogue": "Tu es en sécurité maintenant. Je m'appelle Marin. Nous t'avons retrouvé inconscients à la plage ce matin.",
+"dialogue": "Tu es en sécurité maintenant. Je STARTm'appelle Marin. Nous t'avons retrouvé inconscients à la plage ce matin.",
 "offset": Vector2(260, 160),
 "options": {
 0: {
@@ -23,7 +23,7 @@ nodes = {
 "text": "Taru a quelque chose pour toi."
 }
 },
-"size": Vector2(300, 240),
+"size": Vector2(320, 380),
 "speaker": 1
 },
 &"1_2": {

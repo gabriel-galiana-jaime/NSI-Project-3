@@ -1,9 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://bun2nifx0dt6f"]
+[gd_scene load_steps=13 format=3 uid="uid://bun2nifx0dt6f"]
 
 [ext_resource type="Script" uid="uid://c10txilksvari" path="res://assets/script/ui/ui_control_gameplay.gd" id="1_ad0do"]
 [ext_resource type="Texture2D" uid="uid://dhvs0n23icjsu" path="res://assets/artwork/ui/player_display.png" id="1_o60uq"]
 [ext_resource type="SpriteFrames" uid="uid://dil0j3lkbybww" path="res://assets/gd_ressources/sprite_frames/ui/npf_ui_heart.tres" id="2_erxgx"]
 [ext_resource type="FontFile" uid="uid://dyvi2hsx7nnnw" path="res://assets/gd_ressources/fonts/Early GameBoy.ttf" id="4_2n0rw"]
+[ext_resource type="Script" uid="uid://odlgetlyfxxt" path="res://addons/dialogue_nodes/objects/DialogueBox.gd" id="5_85700"]
+[ext_resource type="Script" uid="uid://dvuv55p0tqjkv" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="6_8reqb"]
+[ext_resource type="Resource" uid="uid://djnp0e6nx8yd8" path="res://assets/gd_ressources/dialogue/french/intro/dia_intro.tres" id="6_s4lpv"]
+[ext_resource type="Script" uid="uid://bnkq8e2epdgpc" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="7_s4lpv"]
+[ext_resource type="Script" uid="uid://dtoxl36pc16gl" path="res://addons/dialogue_nodes/objects/bbcodeMatrix.gd" id="8_kdyao"]
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_5uu00"]
+script = ExtResource("6_8reqb")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_1ms5k"]
+script = ExtResource("7_s4lpv")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_lm58y"]
+script = ExtResource("8_kdyao")
 
 [node name="UI_gameplay" type="CanvasLayer"]
 
@@ -35,3 +49,15 @@ offset_bottom = 231.0
 theme_override_fonts/font = ExtResource("4_2n0rw")
 theme_override_font_sizes/font_size = 24
 text = "Link"
+
+[node name="DialogueBox" type="Panel" parent="Control"]
+layout_mode = 0
+offset_left = 265.0
+offset_top = 385.0
+offset_right = 1594.0
+offset_bottom = 991.0
+script = ExtResource("5_85700")
+data = ExtResource("6_s4lpv")
+start_id = "intro1"
+custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_5uu00"), SubResource("RichTextEffect_1ms5k"), SubResource("RichTextEffect_lm58y")])
+metadata/_custom_type_script = "uid://odlgetlyfxxt"

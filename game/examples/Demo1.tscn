@@ -1,17 +1,19 @@
-[gd_scene load_steps=18 format=3 uid="uid://bwk7tjlhnu23j"]
+[gd_scene load_steps=20 format=3 uid="uid://bwk7tjlhnu23j"]
 
 [ext_resource type="Theme" uid="uid://dc6c1peo4pfyr" path="res://addons/dialogue_nodes/themes/bubbly.theme" id="1_qerq3"]
-[ext_resource type="Script" path="res://examples/demo.gd" id="2_5ddyy"]
+[ext_resource type="Script" uid="uid://bs3kbn0v1msyq" path="res://examples/demo.gd" id="2_5ddyy"]
+[ext_resource type="Script" uid="uid://dt4kb5ohbnycf" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="3_gjrip"]
 [ext_resource type="Resource" uid="uid://dj818hys8f3u8" path="res://examples/ExampleBasic.tres" id="3_yex7d"]
 [ext_resource type="Resource" uid="uid://btriowhsx04c2" path="res://examples/ExampleBBCodes.tres" id="4_ay03t"]
 [ext_resource type="Resource" uid="uid://bjme2drtas671" path="res://examples/ExampleBranching.tres" id="5_ifbb7"]
 [ext_resource type="Resource" uid="uid://c303qivlsn30t" path="res://examples/ExampleCharacters.tres" id="6_arg21"]
 [ext_resource type="Resource" uid="uid://b4os1qum2hx0x" path="res://examples/ExampleSignals.tres" id="7_18syg"]
 [ext_resource type="Resource" uid="uid://cbu4k4hs8fk5s" path="res://examples/ExampleVariables.tres" id="8_4fu3f"]
-[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueBox.gd" id="9_s4y1y"]
-[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="10_wwm1y"]
-[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="11_iuh66"]
-[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeMatrix.gd" id="12_cnev0"]
+[ext_resource type="Script" uid="uid://odlgetlyfxxt" path="res://addons/dialogue_nodes/objects/DialogueBox.gd" id="9_s4y1y"]
+[ext_resource type="Script" uid="uid://dvuv55p0tqjkv" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="10_wwm1y"]
+[ext_resource type="Script" uid="uid://bnkq8e2epdgpc" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="11_iuh66"]
+[ext_resource type="Resource" uid="uid://djnp0e6nx8yd8" path="res://assets/gd_ressources/dialogue/french/intro/dia_intro.tres" id="11_twuh4"]
+[ext_resource type="Script" uid="uid://dtoxl36pc16gl" path="res://addons/dialogue_nodes/objects/bbcodeMatrix.gd" id="12_cnev0"]
 
 [sub_resource type="Curve" id="1"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -1.67805, 0.0, 0, 0]
@@ -40,7 +42,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_qerq3")
 script = ExtResource("2_5ddyy")
-demos = Array[Resource("res://addons/dialogue_nodes/objects/DialogueData.gd")]([ExtResource("3_yex7d"), ExtResource("4_ay03t"), ExtResource("5_ifbb7"), ExtResource("6_arg21"), ExtResource("7_18syg"), ExtResource("8_4fu3f")])
+demos = Array[ExtResource("3_gjrip")]([ExtResource("3_yex7d"), ExtResource("4_ay03t"), ExtResource("5_ifbb7"), ExtResource("6_arg21"), ExtResource("7_18syg"), ExtResource("8_4fu3f")])
 
 [node name="DemoSelector" type="OptionButton" parent="."]
 layout_mode = 1
@@ -77,8 +79,8 @@ offset_left = 32.0
 offset_top = 32.0
 offset_right = 82.0
 offset_bottom = 64.0
-item_count = 2
 selected = 0
+item_count = 2
 popup/item_0/text = "en"
 popup/item_0/id = 0
 popup/item_1/text = "ja"
@@ -123,7 +125,8 @@ offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("9_s4y1y")
-start_id = "START"
+data = ExtResource("11_twuh4")
+start_id = "intro1"
 custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_wmns8"), SubResource("RichTextEffect_jqe1g"), SubResource("RichTextEffect_j1cit")])
 
 [connection signal="item_selected" from="DemoSelector" to="." method="_on_demo_selected"]
