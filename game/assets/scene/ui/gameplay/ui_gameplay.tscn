@@ -51,6 +51,7 @@ theme_override_font_sizes/font_size = 24
 text = "Link"
 
 [node name="DialogueBox" type="Panel" parent="Control"]
+visible = false
 layout_mode = 0
 offset_left = 265.0
 offset_top = 385.0
