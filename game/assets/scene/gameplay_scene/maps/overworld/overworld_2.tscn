@@ -1,17 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddxyoe2btdhhu"]
+[gd_scene load_steps=5 format=4 uid="uid://ddxyoe2btdhhu"]
 
 [ext_resource type="TileSet" uid="uid://blced4cj5l5jr" path="res://assets/gd_ressources/tilesets/nts_map.tres" id="1_d2h6c"]
 [ext_resource type="TileSet" uid="uid://bomjqlwmposuo" path="res://assets/gd_ressources/tilesets/nts_water.tres" id="2_ignqf"]
+[ext_resource type="PackedScene" uid="uid://drhqo6y0dw6sv" path="res://assets/scene/object_scene/player/player.tscn" id="3_ignqf"]
+[ext_resource type="PackedScene" uid="uid://0jq12fpkgtg2" path="res://assets/scene/object_scene/editor_objects/scene_transition_changer.tscn" id="4_nx57p"]
 
 [node name="overworld2" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 z_index = 10
-position = Vector2(-17, 111)
+position = Vector2(99, 117)
 zoom = Vector2(10, 10)
 limit_left = -140
 limit_top = -40
-limit_right = 270
+limit_right = 110
 limit_bottom = 375
 position_smoothing_speed = 8.0
 editor_draw_limits = true
@@ -22,18 +24,23 @@ editor_draw_drag_margin = true
 [node name="main_tilemap" type="Node2D" parent="world"]
 
 [node name="TileMapLayer_collsiion" type="TileMapLayer" parent="world/main_tilemap"]
+visible = false
 z_index = 10
+tile_map_data = PackedByteArray("AAAHAAIAAAAJAAUAAAAHAAMAAAAJAAUAAAAHAAQAAAAJAAUAAAAHAAUAAAAJAAUAAAAHAAYAAAAJAAUAAAAHAAcAAAAJAAUAAAAHAAgAAAAJAAUAAAAHAAkAAAAJAAUAAAACAAoAAAAJAAUAAAADAAoAAAAJAAUAAAAEAAoAAAAJAAUAAAAFAAoAAAAJAAUAAAAGAAoAAAAJAAUAAAAHAAoAAAAJAAUAAAD4/wIAAAAJAAUAAAD5/wIAAAAJAAUAAAD6/wIAAAAJAAUAAAD7/wIAAAAJAAUAAAD8/wIAAAAJAAUAAAD9/wIAAAAJAAUAAAD+/wIAAAAJAAUAAAD//wIAAAAJAAUAAAAAAAIAAAAJAAUAAAABAAIAAAAJAAUAAAACAAIAAAAJAAUAAAADAAIAAAAJAAUAAAAEAAIAAAAJAAUAAAAFAAIAAAAJAAUAAAAGAAIAAAAJAAUAAAD3/woAAAAJAAUAAAD4/woAAAAJAAUAAAD5/woAAAAJAAUAAAD6/woAAAAJAAUAAAD7/woAAAAJAAUAAAD8/woAAAAJAAUAAAD9/woAAAAJAAUAAAD+/woAAAAJAAUAAAD//woAAAAJAAUAAAAAAAoAAAAJAAUAAAABAAoAAAAJAAUAAAD3/wIAAAAJAAUAAAD3/wMAAAAJAAUAAAD3/wQAAAAJAAUAAAD3/wUAAAAJAAUAAAD3/wYAAAAJAAUAAAD3/wcAAAAJAAUAAAD3/wgAAAAJAAUAAAD3/wkAAAAJAAUAAAA=")
 tile_set = ExtResource("1_d2h6c")
 
 [node name="TileMapLayer_water" type="TileMapLayer" parent="world/main_tilemap"]
+tile_map_data = PackedByteArray("AAD6/wIAAQAHAAIAAAD7/wIAAQAHAAIAAAD8/wIAAQAHAAIAAAD9/wIAAQAHAAIAAAD+/wIAAQAHAAIAAAD//wIAAQAHAAIAAAAAAAIAAQAHAAIAAAABAAIAAQAHAAIAAAACAAIAAQAHAAIAAAADAAIAAQAHAAIAAAAEAAIAAQAHAAIAAAAFAAIAAQAHAAIAAAAGAAIAAQAHAAIAAAD3/wIAAQAHAAIAAAD4/wIAAQAHAAIAAAD5/wIAAQAHAAIAAAA=")
 tile_set = ExtResource("2_ignqf")
 
 [node name="TileMapLayer_1" type="TileMapLayer" parent="world/main_tilemap"]
 z_index = 1
+tile_map_data = PackedByteArray("AAACAAMAAAADAAUAAAACAAQAAAADAAUAAAACAAUAAAADAAUAAAACAAYAAAADAAUAAAACAAcAAAADAAUAAAACAAgAAAADAAUAAAADAAMAAAADAAUAAAADAAQAAAADAAUAAAADAAUAAAADAAUAAAADAAYAAAADAAUAAAADAAcAAAADAAUAAAADAAgAAAADAAUAAAAEAAMAAAADAAUAAAAEAAQAAAADAAUAAAAEAAUAAAADAAUAAAAEAAYAAAADAAUAAAAEAAcAAAADAAUAAAAEAAgAAAADAAUAAAAFAAMAAAADAAUAAAAFAAQAAAADAAUAAAAFAAUAAAADAAUAAAAFAAYAAAADAAUAAAAFAAcAAAADAAUAAAAFAAgAAAADAAUAAAAGAAMAAAADAAUAAAAGAAQAAAADAAUAAAAGAAUAAAADAAUAAAAGAAYAAAADAAUAAAAGAAcAAAADAAUAAAAGAAgAAAADAAUAAAACAAkAAAADAAUAAAADAAkAAAADAAUAAAAEAAkAAAADAAUAAAAFAAkAAAADAAUAAAAGAAkAAAADAAUAAAA=")
 tile_set = ExtResource("1_d2h6c")
 
 [node name="TileMapLayer_2" type="TileMapLayer" parent="world/main_tilemap"]
 z_index = 2
+tile_map_data = PackedByteArray("AAAFAAMAAAADAAcAAAAGAAMAAAAEAAcAAAAFAAQAAAADAAcAAAAGAAQAAAAEAAcAAAAFAAUAAAADAAcAAAAGAAUAAAAEAAcAAAAFAAYAAAADAAcAAAAGAAYAAAAEAAcAAAAEAAkAAAAFAAEAAAAFAAkAAAAFAAEAAAAGAAkAAAAGAAEAAAAGAAgAAAAGAAEAAAAEAAMAAAAFAAEAAAADAAMAAAAFAAEAAAACAAMAAAAFAAEAAAA=")
 tile_set = ExtResource("1_d2h6c")
 
 [node name="TileMapLayer_3" type="TileMapLayer" parent="world/main_tilemap"]
@@ -46,4 +53,22 @@ tile_set = ExtResource("1_d2h6c")
 
 [node name="TileMapLayer_7" type="TileMapLayer" parent="world/main_tilemap"]
 z_index = 6
+tile_map_data = PackedByteArray("AAAFAAIAAAADAAYAAAAGAAIAAAAEAAYAAAAFAAMAAAADAAYAAAAGAAMAAAAEAAYAAAAFAAQAAAADAAYAAAAGAAQAAAAEAAYAAAAFAAUAAAADAAYAAAAGAAUAAAAEAAYAAAA=")
 tile_set = ExtResource("1_d2h6c")
+
+[node name="player" parent="." instance=ExtResource("3_ignqf")]
+position = Vector2(99, 117)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="player"]
+remote_path = NodePath("../../Camera2D")
+update_rotation = false
+update_scale = false
+
+[node name="AudioListener2D" type="AudioListener2D" parent="player"]
+position = Vector2(0, 6)
+current = true
+
+[node name="scene_transition_changer2" parent="." instance=ExtResource("4_nx57p")]
+position = Vector2(119, 119)
+scene_to_go = "outdoor1"
+spawn_player_position = Vector2(-135, 261)
