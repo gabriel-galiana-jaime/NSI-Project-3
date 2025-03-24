@@ -12,7 +12,9 @@ var can_damage : bool = true
 var speed : float = 600
 func _process(delta: float) -> void:
 	$AnimatedSprite2D.play("loop")
+	can_damage = true
 	if auto_main_autoload_script.player_data["action"] == "shield":
+		can_damage = false
 		can_be_move = true
 		move_by_player(delta)
 		velocity = velocity * delta
@@ -23,7 +25,6 @@ func _process(delta: float) -> void:
 
 
 func move_by_player(delta):
-	can_damage = true
 	#right:
 	velocity = Vector2(0,0)
 	var collide
