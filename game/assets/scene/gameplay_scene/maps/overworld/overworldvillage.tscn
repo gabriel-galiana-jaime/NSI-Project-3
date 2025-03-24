@@ -120,7 +120,7 @@ spawn_player_position = Vector2(99, 117)
 
 [node name="enemys2" type="CharacterBody2D" parent="."]
 z_index = 5
-position = Vector2(-34, 253)
+position = Vector2(-1, 253)
 script = ExtResource("9_5kxda")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemys2"]
