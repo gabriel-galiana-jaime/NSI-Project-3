@@ -31,5 +31,5 @@ z_index = 4
 tile_set = ExtResource("2_ydkb3")
 
 [node name="TileMapLayer_7" type="TileMapLayer" parent="main_tilemap"]
-z_index = 6
+z_index = 7
 tile_set = ExtResource("2_ydkb3")
