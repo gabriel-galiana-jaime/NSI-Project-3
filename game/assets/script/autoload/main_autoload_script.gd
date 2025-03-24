@@ -8,7 +8,7 @@ func round_position(position : Vector2):
 
 #runtimes stuff
 
-var global_spawn_player_position : Vector2
+var global_spawn_player_position : Vector2 = Vector2(-41.0,157)
 
 var player_data : Dictionary
 var player_max_health : float = 3
