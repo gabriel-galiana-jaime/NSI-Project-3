@@ -22,3 +22,13 @@ func change_health(damage):
 func _process(delta: float) -> void:
 	if player_health < 0:
 		player_health = 0
+
+
+#story management
+
+var story_line : Dictionary = {
+	"sword?":false,
+	
+	
+	
+}

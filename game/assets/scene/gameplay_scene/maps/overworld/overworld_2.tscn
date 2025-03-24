@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=4 uid="uid://ddxyoe2btdhhu"]
+[gd_scene load_steps=10 format=4 uid="uid://ddxyoe2btdhhu"]
 
+[ext_resource type="Script" uid="uid://d1757l5bf8d30" path="res://assets/script/map_scripts/overworld/scr_overworld_2.gd" id="1_3sgjf"]
 [ext_resource type="TileSet" uid="uid://blced4cj5l5jr" path="res://assets/gd_ressources/tilesets/nts_map.tres" id="1_d2h6c"]
 [ext_resource type="TileSet" uid="uid://bomjqlwmposuo" path="res://assets/gd_ressources/tilesets/nts_water.tres" id="2_ignqf"]
 [ext_resource type="PackedScene" uid="uid://drhqo6y0dw6sv" path="res://assets/scene/object_scene/player/player.tscn" id="3_ignqf"]
@@ -8,7 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://dt72vmi4gowdd" path="res://assets/scene/object_scene/npc/enemys/enemy_1.tscn" id="6_r5v8r"]
 [ext_resource type="Texture2D" uid="uid://s6hnqdfj7oro" path="res://assets/artwork/tileset/tileset2.png" id="7_57b7y"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3sgjf"]
+size = Vector2(12.1212, 20)
+
 [node name="overworld2" type="Node2D"]
+script = ExtResource("1_3sgjf")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 z_index = 10
@@ -95,3 +100,15 @@ position = Vector2(-328, 152)
 texture = ExtResource("7_57b7y")
 region_enabled = true
 region_rect = Rect2(48, 80, 16, 16)
+
+[node name="check_sword" type="Area2D" parent="."]
+position = Vector2(-328, 151)
+collision_layer = 5
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="check_sword"]
+z_index = 4
+scale = Vector2(0.66, 0.66)
+shape = SubResource("RectangleShape2D_3sgjf")
+
+[connection signal="body_entered" from="check_sword" to="." method="_on_check_sword_body_entered"]
