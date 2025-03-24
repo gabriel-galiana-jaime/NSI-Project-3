@@ -7,10 +7,6 @@ func _process(delta: float) -> void:
 	velocity = basic_move_patrol(delta)
 	#$RayCast2D.target_position = Vector2(raycast_len,raycast_len) * direction
 	move_and_slide()
-	
-	if $RayCast2D.is_colliding():
-		print("wall_touched")
-	pass
 
 
 func basic_move_patrol(delta):
