@@ -67,3 +67,4 @@ scene_to_go = "outdoor1"
 spawn_player_position = Vector2(-8, 91)
 
 [node name="UI_gameplay" parent="." instance=ExtResource("5_om5ut")]
+visible = false
