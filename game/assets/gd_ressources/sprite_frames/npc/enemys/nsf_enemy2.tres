@@ -1,0 +1,44 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://dao4js8t250an"]
+
+[ext_resource type="Texture2D" uid="uid://e5kw2deofngv" path="res://assets/artwork/npc/enemys/octoroksheet1.png" id="1_rburk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hs75k"]
+atlas = ExtResource("1_rburk")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81m1o"]
+atlas = ExtResource("1_rburk")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rburk"]
+atlas = ExtResource("1_rburk")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ly4mi"]
+atlas = ExtResource("1_rburk")
+region = Rect2(48, 0, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hs75k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81m1o")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rburk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ly4mi")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}]

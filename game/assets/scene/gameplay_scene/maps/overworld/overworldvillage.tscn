@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://cvyxatrb46aym"]
+[gd_scene load_steps=13 format=4 uid="uid://cvyxatrb46aym"]
 
 [ext_resource type="TileSet" uid="uid://blced4cj5l5jr" path="res://assets/gd_ressources/tilesets/nts_map.tres" id="1_bel82"]
 [ext_resource type="TileSet" uid="uid://bomjqlwmposuo" path="res://assets/gd_ressources/tilesets/nts_water.tres" id="1_qod82"]
@@ -8,9 +8,14 @@
 [ext_resource type="PackedScene" uid="uid://dt72vmi4gowdd" path="res://assets/scene/object_scene/npc/enemys/enemy_1.tscn" id="5_6hlad"]
 [ext_resource type="PackedScene" uid="uid://bun2nifx0dt6f" path="res://assets/scene/ui/gameplay/ui_gameplay.tscn" id="6_cv0av"]
 [ext_resource type="SpriteFrames" uid="uid://ddl4deddji6ak" path="res://assets/gd_ressources/sprite_frames/npc/villagers/nsf_marin.tres" id="7_cxrml"]
+[ext_resource type="Script" uid="uid://djs78c8d0xqgl" path="res://assets/script/npc/enemys/scr_enemy_2.gd" id="9_5kxda"]
+[ext_resource type="SpriteFrames" uid="uid://dao4js8t250an" path="res://assets/gd_ressources/sprite_frames/npc/enemys/nsf_enemy2.tres" id="9_fl3km"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cv0av"]
 size = Vector2(10, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_susuf"]
+size = Vector2(13, 9)
 
 [node name="overworldvillage" type="Node2D"]
 
@@ -112,3 +117,16 @@ animation = &"idle_down"
 position = Vector2(-151, 264)
 scene_to_go = "outdoor2"
 spawn_player_position = Vector2(99, 117)
+
+[node name="enemys2" type="CharacterBody2D" parent="."]
+z_index = 5
+position = Vector2(-21, 254)
+script = ExtResource("9_5kxda")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemys2"]
+position = Vector2(1.5, -0.5)
+shape = SubResource("RectangleShape2D_susuf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemys2"]
+sprite_frames = ExtResource("9_fl3km")
+animation = &"left"
