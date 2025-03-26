@@ -20,6 +20,7 @@ tile_set = ExtResource("2_ydkb3")
 
 [node name="TileMapLayer_2" type="TileMapLayer" parent="main_tilemap"]
 z_index = 2
+position = Vector2(0, 1)
 tile_set = ExtResource("2_ydkb3")
 
 [node name="TileMapLayer_3" type="TileMapLayer" parent="main_tilemap"]
