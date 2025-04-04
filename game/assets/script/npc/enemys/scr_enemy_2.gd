@@ -1,24 +1,31 @@
 extends CharacterBody2D
 
 @onready var navigation_agent = $NavigationAgent2D
-@onready var marker = $"../Marker2D"
+@onready var marker = $"../player/Marker2D"
 
 # Set your desired speed and a threshold for proximity to each point.
 var speed: float = 300.0
 var proximity_threshold: float = 5.0
 
 func _ready() -> void:
-	navigation_agent.target_position = marker.position
+	# Set the initial target position for the navigation agent.
+	navigation_agent.target_position = marker.global_position
 
 func _process(delta: float) -> void:
-	# Update the target if the marker might move.
-	navigation_agent.target_position = marker.position
-	# Get the next point along the computed path.
-	var next_point: Vector2 = navigation_agent.get_next_path_position()
-# Calculate the vector connecting the character to the next navigation point.
-	var direction_vector: Vector2 = next_point - global_position# If we're sufficiently far from the current target point, move toward it.
-	if direction_vector.length() > proximity_threshold:
-		velocity = direction_vector.normalized() * speed
+	# Update the target position if the marker moves.
+	if navigation_agent.target_position != marker.global_position:
+		navigation_agent.target_position = marker.global_position
+	
+	# Get the next position from the navigation agent.
+	var next_position = navigation_agent.get_next_path_position()
+
+	# Check if the character is close enough to the target position.
+	if position.distance_to(navigation_agent.target_position) > proximity_threshold:
+		# Calculate the direction to the next position.
+		var direction = (next_position - position).normalized()
+		# Move the character in the direction while avoiding obstacles.
+		velocity = direction * speed * delta
+		move_and_slide()
 	else:
-		velocity = Vector2.ZERO  # Stop if very close (or let the agent pick the next path point)    
-	move_and_slide()
+		# Stop the character when close to the target.
+		velocity = Vector2.ZERO
