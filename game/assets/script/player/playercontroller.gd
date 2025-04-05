@@ -34,7 +34,9 @@ func _physics_process(delta: float) -> void:
 
 func input_axis_():
 	input_axis =  Vector2(Input.get_action_raw_strength("right") - Input.get_action_raw_strength("left"),Input.get_action_raw_strength("down") - Input.get_action_raw_strength("up"))
-	input_axis = floor(input_axis)
+	input_axis.x = floor(input_axis.x)
+	input_axis.y = floor(input_axis.y)
+	print(input_axis)
 	state_player["moving_axis_x"] = input_axis.x
 	state_player["moving_axis_y"] = input_axis.y
 	pass
