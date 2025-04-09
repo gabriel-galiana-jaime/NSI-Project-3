@@ -1,8 +1,10 @@
 extends CharacterBody2D
 
-@export var pathfinding_reach : int = 30
+#@export var pathfinding_reach : int = 5
+@export var debug : bool = true
 
 @onready var navigation_agent = $NavigationAgent2D
+@onready var path_drawer = $debug_path_drawer
 @onready var marker = $"../player/Marker2D"
 @onready var tilemap = $"../world/main_tilemap"
 @onready var tilemap_obstacles = $"../world/main_tilemap/TileMapLayer_2"
@@ -39,53 +41,58 @@ func _process(delta: float) -> void:
 		velocity = Vector2.ZERO
 	"""
 	path = pathfinding()
+	if debug:
+		if path_drawer:
+			path_drawer.update_path(path, tilemap_obstacles)
+	
+	if path.size() > 1:  # Safety check
+		next_position = tilemap_obstacles.map_to_local(path[1])
+
 	next_position = tilemap_obstacles.map_to_local(path[1])
 	var direction = (next_position - position).normalized()
 	velocity = direction * speed * delta
 	move_and_slide()
 	
 
-#> PATHFINDING PROTOTYPE
-func get_tile():
+# Pathfinding Prototype with BFS (Fixed Set Implementation)
+func get_tile() -> Vector2i:
 	var tile_pos = tilemap_obstacles.local_to_map(global_position)
-	var tile_data = tilemap_obstacles.get_cell_tile_data(tile_pos)
-	#print("tile ", str(tile_pos))
 	return Vector2i(tile_pos)
 
-func get_adjacent_paths(tile_pos : Vector2i):
+func get_adjacent_paths(tile_pos: Vector2i) -> Array:
 	var adjacent_positions = [
 		tile_pos + Vector2i(1, 0),
 		tile_pos + Vector2i(0, 1),
 		tile_pos + Vector2i(-1, 0),
 		tile_pos + Vector2i(0, -1)
-		]
+	]
 	var adjacent_paths = []
 	for adj_pos in adjacent_positions:
 		var tile_data = tilemap_obstacles.get_cell_tile_data(adj_pos)
-		if tile_data:
-			if tile_data.get_custom_data("obstacle"):
-				adjacent_paths.append(adj_pos)
-		else:
+		# Check if the tile is walkable (not an obstacle)
+		if not tile_data or not tile_data.get_custom_data("obstacle"):
 			adjacent_paths.append(adj_pos)
-
 	return adjacent_paths
 
-func pathfinding():
-	var current_tile : Vector2i = get_tile()
-	var paths : Array = [[current_tile]]
-	var target_cell : Vector2i = tilemap_obstacles.local_to_map(marker.global_position)
-	for i in range(pathfinding_reach):
-		for path in paths:
-			var path_end : Vector2i = path[-1]
-			var new_branches : Array = get_adjacent_paths(path_end)
-			for branch in new_branches:
-				paths.append(path + [branch])
-	for path in paths:
-		if path[-1] != target_cell:
-			paths.erase(path)
-	var final_path : Array = paths[0]
-	for path in paths:
-		if len(final_path) > len(path):
-			final_path = path
-	return final_path
+func pathfinding() -> Array:
+	var start_tile: Vector2i = get_tile()
+	var target_tile: Vector2i = tilemap_obstacles.local_to_map(marker.global_position)
+	
+	# BFS Initialization
+	if start_tile != target_tile:
+		var queue: Array = [[start_tile]]  # Explicit nested typing
+		var visited = {}
+		
+		while queue.size() > 0:
+			var current_path: Array = queue.pop_front()
+			var current_tile: Vector2i = current_path[-1]
 			
+			if current_tile == target_tile:
+				return current_path  # Already properly typed
+			
+			for neighbor in get_adjacent_paths(current_tile):
+				if not visited.has(neighbor):
+					visited[neighbor] = true
+					queue.append(current_path + [neighbor] as Array)
+		
+	return [target_tile, target_tile]  # Empty array inherits return type

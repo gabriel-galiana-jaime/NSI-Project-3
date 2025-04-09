@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://qp15hu5suy4d"]
+
+[ext_resource type="Script" uid="uid://dmtyqphg62i2m" path="res://assets/scene/gameplay_scene/maps/overworld/debug_path_drawer.gd" id="1_p0xjx"]
+
+[node name="debug_path_drawer" type="Node2D"]
+script = ExtResource("1_p0xjx")
