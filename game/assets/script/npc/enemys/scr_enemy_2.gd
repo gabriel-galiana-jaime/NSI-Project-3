@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
-#@export var pathfinding_reach : int = 5
+@export var pathfinding_reach : int = 20
 @export var debug : bool = true
 
 @onready var navigation_agent = $NavigationAgent2D
-@onready var path_drawer = $debug_path_drawer
+@onready var path_drawer = $"../debug_path_drawer"
 @onready var marker = $"../player/Marker2D"
 @onready var tilemap = $"../world/main_tilemap"
 @onready var tilemap_obstacles = $"../world/main_tilemap/TileMapLayer_2"
@@ -41,6 +41,7 @@ func _process(delta: float) -> void:
 		velocity = Vector2.ZERO
 	"""
 	path = pathfinding()
+	
 	if debug:
 		if path_drawer:
 			path_drawer.update_path(path, tilemap_obstacles)
@@ -78,21 +79,28 @@ func pathfinding() -> Array:
 	var start_tile: Vector2i = get_tile()
 	var target_tile: Vector2i = tilemap_obstacles.local_to_map(marker.global_position)
 	
-	# BFS Initialization
+	# BFS Initialization with path length tracking
 	if start_tile != target_tile:
-		var queue: Array = [[start_tile]]  # Explicit nested typing
+		var queue: Array = [[start_tile]]  # Stores paths as arrays of tiles
 		var visited = {}
 		
 		while queue.size() > 0:
 			var current_path: Array = queue.pop_front()
 			var current_tile: Vector2i = current_path[-1]
 			
+			# Return path if target found
 			if current_tile == target_tile:
-				return current_path  # Already properly typed
+				return current_path
 			
+			# Cap path length using pathfinding_reach
+			if current_path.size() >= pathfinding_reach:
+				return [start_tile, start_tile]  # Skip processing this path if beyond reach
+			
+			# Explore neighbors
 			for neighbor in get_adjacent_paths(current_tile):
 				if not visited.has(neighbor):
 					visited[neighbor] = true
 					queue.append(current_path + [neighbor] as Array)
-		
-	return [target_tile, target_tile]  # Empty array inherits return type
+	
+	
+	return [start_tile, start_tile]  # Fallback for edge cases
