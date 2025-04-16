@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=4 uid="uid://bh3h0eu3eeh6a"]
+[gd_scene load_steps=5 format=4 uid="uid://bh3h0eu3eeh6a"]
 
 [ext_resource type="TileSet" uid="uid://blced4cj5l5jr" path="res://assets/gd_ressources/tilesets/nts_map.tres" id="1_ajyj7"]
 [ext_resource type="TileSet" uid="uid://bomjqlwmposuo" path="res://assets/gd_ressources/tilesets/nts_water.tres" id="2_h0vyw"]
 [ext_resource type="PackedScene" uid="uid://drhqo6y0dw6sv" path="res://assets/scene/object_scene/player/player.tscn" id="3_h0vyw"]
+[ext_resource type="PackedScene" uid="uid://0jq12fpkgtg2" path="res://assets/scene/object_scene/editor_objects/scene_transition_changer.tscn" id="4_qsacs"]
 
 [node name="overworld3" type="Node2D"]
 
@@ -43,7 +44,7 @@ tile_set = ExtResource("1_ajyj7")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 z_index = 10
-position = Vector2(-41, 157)
+position = Vector2(26, 283)
 zoom = Vector2(10, 10)
 limit_left = -140
 limit_top = -40
@@ -54,7 +55,7 @@ editor_draw_limits = true
 editor_draw_drag_margin = true
 
 [node name="player" parent="." instance=ExtResource("3_h0vyw")]
-position = Vector2(-41, 157)
+position = Vector2(26, 283)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="player"]
 remote_path = NodePath("../../Camera2D")
@@ -64,3 +65,8 @@ update_scale = false
 [node name="AudioListener2D" type="AudioListener2D" parent="player"]
 position = Vector2(0, 6)
 current = true
+
+[node name="scene_transition_changer" parent="." instance=ExtResource("4_qsacs")]
+position = Vector2(8, 288)
+scene_to_go = "outdoor1"
+spawn_player_position = Vector2(280, 50)
